@@ -3,12 +3,12 @@ const planetsRouter = require('./src/routes/planets/planets.router')
 const cors = require('cors')
 const path = require('path')
 const morgan = require('morgan')
-
+const PORT = process.env.PORT || 8000
 const app = express()
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: PORT || 'http://localhost:3000',
   })
 )
 app.use(morgan('combined'))
